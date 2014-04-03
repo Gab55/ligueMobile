@@ -4,11 +4,15 @@
     <div data-role="header">
 <form>
     <div class="ui-input-btn ui-btn ui-btn-inline">
-        Enhanced
+        Mon tableau de bord
         <input data-enhanced="true" value="Enhanced" type="button">
     </div>
         <div class="ui-input-btn ui-btn ui-btn-inline">
-        Enhanced 2
+        Nouvel incident
+        <input data-enhanced="true" value="Enhanced" type="button">
+    </div>
+    <div class="ui-input-btn ui-btn ui-btn-inline">
+        Se déconnecter
         <input data-enhanced="true" value="Enhanced" type="button">
     </div>
 </form>
