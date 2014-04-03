@@ -7,8 +7,8 @@
  * To change this template use File | Settings | File Templates.
  */
 
-include("vues/v_entete.php") ;
-include("vues/v_bandeau_tech.php") ;
+include("../vues/v_entete.php") ;
+include("../vues/v_bandeau_tech.php") ;
 echo("Bienvenue ".$_SESSION['login']['identite']);?></br><?php
 
 if(!isset($_REQUEST['action']))
@@ -21,12 +21,12 @@ switch($action){
         $the_bugs = getAllBugs();
         $bugs_en_cours = $the_bugs[0];
         $bugs_fermes =  $the_bugs[1];
-        include ("vues/v_container_tab_tech.php");
+        include ("vues/v_dashtech.php");
         break;
     }
     case 'config' : {
         $techniciens = getAllTechnicien();
-        include("vues/v_config_tech.php");
+        include("../vues/v_config_tech.php");
         break;
     }
     case 'modifier_statut' : {
