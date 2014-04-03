@@ -42,14 +42,14 @@ switch($uc)
     {
         if (isset($_SESSION['login'])){
             if ($_SESSION['login']['fonction'] == "Responsable" ){
-                include("./controleurs/c_dashboard_resp.php");
+                include("controleurs/c_dashboard_resp.php");
             }else{
                 if ($_SESSION['login']['fonction'] == "Technicien" ){
-                    include("./controleurs/c_dashboard_tech.php");
+                    include("controleurs/c_dashboard_tech.php");
                 }else{
                     if ($_SESSION['login']['fonction'] == "Club" ){
 
-                        include("./controleurs/c_dashboard_club.php");
+                        include("controleurs/c_dashboard_club.php");
                     }
                 }
             }
