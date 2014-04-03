@@ -6,7 +6,7 @@
  * Time: 19:10
  * To change this template use File | Settings | File Templates.
  */
-
+include("vues/v_header.php") ;
 include("vues/v_bandeau.php") ;
 
 if(!isset($_REQUEST['action']))
