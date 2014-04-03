@@ -7,9 +7,6 @@
  * To change this template use File | Settings | File Templates.
  */
 
-include("vues/v_entete.php") ;
-include("vues/v_bandeau_resp.php") ;
-
 
 if(!isset($_REQUEST['action']))
     $action = 'list';
@@ -21,7 +18,7 @@ switch($action){
         $the_bugs = getAllBugs();
         $bugs_en_cours = $the_bugs[0];
         $bugs_fermes =  $the_bugs[1];
-        include ("vues/v_container_tab_resp.php");
+        include ("vues/v_dashresp.php");
         break;
     }
     case 'config' : {

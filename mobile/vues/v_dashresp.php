@@ -1,6 +1,22 @@
-<?php
+<a id='lnkDialog' href="#ticket_dialog" data-transition="flip" style='display:none;'></a>
 
-?>
+<div data-role="page">
+    <div data-role="header">
+        <form>
+            <div class="ui-input-btn ui-btn ui-btn-inline">
+                Mon tableau de bord
+                <input data-enhanced="true" value="Enhanced" type="button">
+            </div>
+            <div class="ui-input-btn ui-btn ui-btn-inline">
+                Se déconnecter
+                <input data-enhanced="true" value="Enhanced" type="button">
+            </div>
+        </form>
+    </div>
+    <div data-role="content">
+        <div data-role="collapsible-set" data-theme="b" data-content-theme="a">
+            <div id="liste_tickets">
+                <div data-role="collapsible" data-collapsed="true">
 <h2>BUGS EN COURS</h2>
 <table cellspacing="0">
     <tr><th>Technicien</th><th>Client</th><th>Description</th><th>Crée le</th><th>Statut</th><th></th></tr>
@@ -24,7 +40,10 @@
 
     ?>
 </table><br>
+                    </div>
+
 <hr>
+                <div data-role="collapsible">
 <h2>BUGS FERMES</h2>
 
 <table cellspacing="0">
@@ -49,3 +68,8 @@
 
     ?>
 </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
