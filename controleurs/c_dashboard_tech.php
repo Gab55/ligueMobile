@@ -33,7 +33,8 @@ switch($action){
         $idBug = $_POST['idBug'];
         $idEngineer = $_SESSION['login']['id'];
         $status = $_POST['statut'];
-        statutBug($idBug, $idEngineer, $status);
+        $resume = $_POST['resume'];
+        statutBug($idBug, $idEngineer, $status, $resume);
         header("Location:index.php?uc=dash");
         break;
     }

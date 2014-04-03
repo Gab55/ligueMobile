@@ -33,17 +33,16 @@ switch($action){
         $idBug = $_POST['idBug'];
         $idEngineer = $_SESSION['login']['id'];
         $status = $_POST['statut'];
-        $note_tech = $_POST['note_tech'];
-        statutBug($idBug, $idEngineer, $status, $note_tech);
-        include("vues/v_entete.php") ;
-        include("vues/v_bandeau_resp.php") ;
+        $resume = $_POST['resume'];
+        statutBug($idBug, $idEngineer, $status, $resume);
         header("Location:index.php?uc=dash");
         break;
     }
     case 'affecter' : {
         $idBug = $_POST['idBug'];
         $idTech = $_POST['idTech'];
-        affecterBug($idBug, $idTech);
+        $delai = $_POST['delai'];
+        affecterBug($idBug, $idTech, $delai);
         header("Location:index.php?uc=dash");
         break;
     }

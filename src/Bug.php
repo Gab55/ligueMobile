@@ -57,29 +57,6 @@ class Bug
     protected $delai;
 
     /**
-     * @column(type="string",nullable=true)
-     **/
-    protected $note_tech;
-
-    /**
-     * @param mixed $note_tech
-     */
-    public function setNoteTech($note_tech)
-    {
-        $this->note_tech = $note_tech;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getNoteTech()
-    {
-        return $this->note_tech;
-    }
-
-
-
-    /**
      * @param mixed $capture
      */
     public function setCapture($capture)

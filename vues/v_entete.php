@@ -9,9 +9,6 @@
 <link href="util/cssGeneral.css" rel="stylesheet" type="text/css">
 <script charset="utf-8" src="vues/jquery/jquery-1.7.min.js"></script>
 <script src="vues/jquery/jquery-ui.min.js"></script>
-<script src="./util/jquery-1.10.2.min.js"></script>
-<script src="./util/jquery.bpopup.min.js"></script>
-<script src="./util/fonctions.js"></script>
 
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>

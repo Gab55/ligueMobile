@@ -6,7 +6,7 @@
  * Time: 10:31
  */
 $bug = getOneBug($_GET["bug"]);
-echo "Bug n°".$bug->getId()."<br>Description : ".$bug->getDescription();
+echo "Bug n°".$bug->getId()."<br>Description : ".$bug->getDescription()."<br>Crée le : ".$bug->getCreated()->format('d.m.Y')."<br><br>Capture d'écran : <br><img style='width:800px' src='upload/".$bug->getCapture()."'>";
 //var_dump($bug);
 ?>
 
@@ -25,18 +25,27 @@ echo "Bug n°".$bug->getId()."<br>Description : ".$bug->getDescription();
         <option value="IN PROGRESS">IN PROGRESS</option>
     </select><br><br>
     Ajouter une note<br>
-    <textarea required=""></textarea><br><br>
+    <textarea name="resume" required=""></textarea><br><br>
     <input type="submit" value="Valider">
 </form>
 <form id="form_affecter" method="post" action="index.php?uc=dash&action=affecter">
     <input type="hidden" name="idBug" value="<?php echo $bug->getId();?>">
-    <select name="idTech">
+    Technicien : <select name="idTech">
     <?php
         foreach($techniciens as $tech) {
             echo "<option value=".$tech->getId().">".$tech->getName()." ".$tech->getPrenom()."</option>";
         }
     ?>
     </select>
+    <br><br>
+    Priorité :
+    <select name="delai">
+        <option>Haute</option>
+        <option>Moyenne</option>
+        <option>Basse</option>
+    </select>
+    <br>
+    <br>
     <input type="submit" value="Affecter">
 </form>
 <script>

@@ -1,13 +1,10 @@
 <?php
 $bug = getOneBug($_GET["bug"]);
-echo "Bug n°".$bug->getId()."<br>Description : ".$bug->getDescription();
+echo "Bug n°".$bug->getId()."<br>Description : ".$bug->getDescription()."<br>Crée le : ".$bug->getCreated()->format('d.m.Y')."<br><br>Capture d'écran : <br><img style='width:800px' src='upload/".$bug->getCapture()."'>";
 //var_dump($bug);
 ?>
 
-<h2>Que voulez vous faire ?</h2>
-<FORM>
-    <INPUT type= "radio" name="radio" id="resolu" value="resolu" onclick="form_resolu();">Changer le statut<br><br>
-    </FORM>
+<h2>MODIFIER LE STATUT D'UN INCIDENT</h2>
 <hr>
 
 <form id="form_resolu" method="post" action="index.php?uc=dash&action=modifier_statut">
@@ -18,19 +15,6 @@ echo "Bug n°".$bug->getId()."<br>Description : ".$bug->getDescription();
         <option value="IN PROGRESS">IN PROGRESS</option>
     </select><br><br>
     Ajouter une note<br>
-    <textarea></textarea><br><br>
+    <textarea name="resume"></textarea><br><br>
     <input id="note_tech"type="submit" value="Valider">
 </form>
-
-<script>
-    $( document ).ready(function() {
-        $('#form_resolu').fadeOut(1);
-        $('#form_affecter').fadeOut(1);
-    });
-    function form_resolu() {
-        $('#form_resolu').fadeOut(1);
-        $('#form_affecter').fadeOut(1);
-        $('#form_resolu').fadeIn(1);
-    }
-
-</script>

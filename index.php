@@ -1,16 +1,6 @@
 <?php
 session_start();
 
-// test du type de STA
-require_once './mobile/lib/Mobile-Detect/Mobile_Detect.php';
-$detect = new Mobile_Detect;
-
-// Any mobile device (phones or tablets).
-if ( $detect->isMobile() ) {
-    header('Location:./mobile/');
-}
-
-
 include("util/fonctions.inc.php");
 include ("util/upload_file.php");
 

@@ -146,20 +146,21 @@ function getOneBug($id) {
     //$bug = $query->getResult();
     return $bug;
 }
-function affecterBug($idBug, $idTech) {
+function affecterBug($idBug, $idTech, $delai) {
     require "bootstrap.php";
     $bug = $entityManager->find('Bug', $idBug);
     $tech = $entityManager->find('User', $idTech);
     $bug->setEngineer($tech);
+    $bug->setDelai($delai);
     $entityManager->flush();
 }
-function statutBug($idBug, $idEngineer, $status, $note_tech) {
-    require "../bootstrap.php";
+function statutBug($idBug, $idEngineer, $status, $resume) {
+    require "bootstrap.php";
     $bug = $entityManager->find('Bug', $idBug);
     $engineer = $entityManager->find('User', $idEngineer);
     $bug->setEngineer($engineer);
     $bug->setStatus($status);
-    $bug->setNoteTech($note_tech);
+    $bug->setResume($resume);
     $entityManager->flush();
 }
 function ajouterNewBug(){

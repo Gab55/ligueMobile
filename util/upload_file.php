@@ -2,10 +2,16 @@
 function envoieFichier($file)
 {
     $fichier = basename($file['name']);
+    $nb_min = 1;
+    $nb_max = 1000;
+    $nombre = mt_rand($nb_min,$nb_max);
+    //$fichier = $nombre;
+
     $taille_maxi = 1000000;
     $taille = filesize($file['tmp_name']);
     $extensions = array('.png', '.gif', '.jpg', '.jpeg' );
     $extension = strrchr($file['name'], '.');
+    $fichier = $nombre.$extension;
     //Début des vérifications de sécurité...
     if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
     {
