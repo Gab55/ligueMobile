@@ -18,8 +18,16 @@
             <div id="liste_tickets">
                 <div data-role="collapsible" data-collapsed="true">
 <h2>BUGS EN COURS</h2>
-<table cellspacing="0">
-    <tr><th>Technicien</th><th>Client</th><th>Description</th><th>Crée le</th><th>Statut</th><th></th></tr>
+<table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+    <thead>
+    <tr>
+        <th data-priority="2">Rang</th>
+        <th>Titre</th>
+        <th data-priority="3">Année</th>
+        <th data-priority="1"><abbr title="Classement de Rotten Tomato">Classement</abbr></th>
+        <th data-priority="5">Commentaires</th>
+    </tr>
+    </thead>
     <?php
     foreach($bugs_en_cours as $bug){
         if ($bug->getEngineer() != null){
@@ -31,8 +39,8 @@
         echo "<tr>";
         echo "<td>".$engineer."</td>";
         echo "<td>".$bug->getReporter()->getName()."</td>";
-        echo "<td>".$bug->getDescription()."</td>";
-        echo "<td>".$bug->getCreated()->format('d.m.Y')."</td>";
+        //echo "<td>".$bug->getDescription()."</td>";
+        //echo "<td>".$bug->getCreated()->format('d.m.Y')."</td>";
         echo "<td>".$bug->getStatus()."</td>";
         echo "<td><a href='index.php?uc=dash&action=config&bug=".$bug->getId()."'><img src='util/img/arrow.png'></a></td>";
         echo "</tr>";
