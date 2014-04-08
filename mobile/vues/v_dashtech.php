@@ -4,98 +4,90 @@
     <div data-role="header">
 <form>
     <div class="ui-input-btn ui-btn ui-btn-inline">
-Mon tableau de bord
-<input data-enhanced="true" value="Enhanced" type="button">
-    </div>
-    <div class="ui-input-btn ui-btn ui-btn-inline">
-Se déconnecter
-<input data-enhanced="true" value="Enhanced" type="button">
+    <?php
+        if(estConnecter()){
+        ?>
+            <a href="index.php?uc=dash" data-role="button" data-inline="true"> Mon tableau de bord </a>
+            <a href="index.php?uc=deconnexion" data-role="button" data-inline="true">Se déconnecter</a>
+        <?php
+        }else{
+            ?><a href="index.php?uc=accueil" data-role="button" data-inline="true"> Accueil </a></li>';
+        <?php
+        }
+    ?>
     </div>
 </form>
     </div>
     <div data-role="content">
-        <h4>Bienvenue sur votre console de gestion</h4>
-
         <div data-role="collapsible-set" data-theme="b" data-content-theme="a">
             <div id="liste_tickets">
-            <div data-role="collapsible" data-collapsed="true">
-                <h3>Tickets en cours</h3>
-                <p>
-                <table><tr><th></th><th>Numéro</th><th>Date</th><th>Technicien</th><th>Produits concernés</th></tr>
-                    <?php
-                    foreach ($bugs_en_cours as $bug) {
-                        if ($bug->getEngineer() != null){
-                            $engineer = $bug->getEngineer()->getName();
-                        }else{
-                            $engineer = "non affecté";
+                <div data-role="collapsible" data-collapsed="true">
+                    <h2>BUGS EN COURS</h2>
+
+                    <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+                        <thead>
+                        <tr>
+                            <th>Client</th>
+                            <th>Statut</th>
+                            <th data-priority="3">Date</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <?php
+                        foreach($bugs_en_cours as $bug){
+                            if ($bug->getEngineer() != null){
+                                $engineer = $bug->getEngineer()->getName();
+                            }else{
+                                $engineer = "non affecté";
+                            }
+
+                            echo "<tr>";
+                            //echo "<td>".$engineer."</td>";
+                            echo "<td>".$bug->getReporter()->getName()."</td>";
+                            //echo "<td>".$bug->getDescription()."</td>";
+                            if($bug->getStatus()=="IN PROGRESS"){
+                                echo "<td>En cours</td>";
+                            }
+                            else {
+                                echo "<td>Ouvert</td>";
+                            }
+                            echo "<td>".$bug->getCreated()->format('d.m.Y')."</td>";
+                            echo "<td><a href='index.php?uc=dash&action=config&bug=".$bug->getId()."'><img src='util/img/arrow.png'></a></td>";
+                            echo "</tr>";
                         }
-                        echo "<tr>";
-                        echo "<td><img src='../images/en_cours.png' width='30px' height='30px'/></td>";
-                        echo "<td class='colonneid'>".$bug->getId()."</td>";
-                        echo "<td class='colonnedate'>".$bug->getCreated()->format('d.m.Y')."</td>";
-                        echo "<td class='colonnetech'>".$engineer."</td>";
-                        echo "<td class='colonneprod'>";
-                        foreach ($bug->getProducts() as $product) {
-                            echo "- ".$product->getName()." ";
+
+                        ?>
+                    </table><br>
+                </div>
+
+                <hr>
+                <div data-role="collapsible">
+                    <h2>BUGS FERMES</h2>
+
+                    <table cellspacing="0">
+                        <tr><th>Technicien</th><th>Client</th><th>Description</th><th>Résumé résolution</th><th>Crée le</th><th>Statut</th></tr>
+                        <?php
+                        foreach($bugs_fermes as $bug){
+                            if ($bug->getEngineer() != null){
+                                $engineer = $bug->getEngineer()->getName();
+                            }else{
+                                $engineer = "non affecté";
+                            }
+
+                            echo "<tr>";
+                            echo "<td>".$engineer."</td>";
+                            echo "<td>".$bug->getReporter()->getName()."</td>";
+                            echo "<td>".$bug->getDescription()."</td>";
+                            echo "<td>".$bug->getResume()."</td>";
+                            echo "<td>".$bug->getCreated()->format('d.m.Y')."</td>";
+                            echo "<td>".$bug->getStatus()."</td>";
+                            echo "</tr>";
                         }
-                        echo "</td>";
-                        //echo "<li>".$bug->getDescription()."</li>";
-                        echo "</tr>";
-                    }
-                    ?>
 
-
-</table>
-</p>
-</div>
-
-<div data-role="collapsible">
-    <h3>Tickets cloturés</h3>
-    <p>
-    <table><tr><th></th><th>Numéro</th><th>Date</th><th>Technicien</th><th>Produits concernés</th></tr>
-        <?php
-        foreach ($bugs_fermes as $bug) {
-            if ($bug->getEngineer() != null){
-                $engineer = $bug->getEngineer()->getName();
-            }else{
-                $engineer = "non affecté";
-            }
-            echo "<tr>";
-            echo "<td><img src='../images/ferme.png' width='30px' height='30px'/></td>";
-            echo "<td class='colonneid'>".$bug->getId()."</td>";
-            echo "<td class='colonnedate'>".$bug->getCreated()->format('d.m.Y')."</td>";
-            echo "<td class='colonnetech'>".$engineer."</td>";
-            echo "<td class='colonneprod'>";
-            foreach ($bug->getProducts() as $product) {
-                echo "- ".$product->getName()." ";
-            }
-            echo "</td>";
-            //echo "<td>".$bug->getDescription()."</td>";
-            echo "</tr>";
-        }
-        ?>
-
-    </table>
-    </p>
-</div>
-</div>
-</div>
-</div>
-<div data-role="footer" data-position="fixed">
-    <h4>Pied de page</h4>
-</div>
-</div>
-
-<div data-role="dialog" id="ticket_dialog">
-    <div data-role="header">
-        <h1>Detail du ticket <div id="id_ticket"></div></h1>
-    </div>
-    <div data-role="content">
-        <div id="descri_ticket"></div>
-        <hr/>
-        <div id="solution_ticket"></div>
+                        ?>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
-</body>
-</html>
