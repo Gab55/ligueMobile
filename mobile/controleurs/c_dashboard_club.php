@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-include("vues/v_bandeau.php") ;
+
 
 if(!isset($_REQUEST['action']))
     $action = 'list';
@@ -34,9 +34,5 @@ switch($action){
         include("vues/v_new_bug.php");
         break;
     }
-    case 'validationBug':
-    {
-        include ("vues/v_validation_Bug.php");
-        break;
-    }
+
 }

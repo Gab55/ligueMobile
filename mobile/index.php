@@ -1,9 +1,9 @@
 <?php
 session_start();
-
-include("../util/fonctions.inc.php");
+include ("util/upload_file.php");
+include("util/fonctions.inc.php");
 include("./vues/v_header.php") ;
-include("./vues/v_bandeau.php") ;
+
 
 $msgErreurs = array();
 
