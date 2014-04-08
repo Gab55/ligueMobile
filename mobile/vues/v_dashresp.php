@@ -21,11 +21,9 @@
 <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
     <thead>
     <tr>
-        <th data-priority="2">Rang</th>
-        <th>Titre</th>
-        <th data-priority="3">Année</th>
-        <th data-priority="1"><abbr title="Classement de Rotten Tomato">Classement</abbr></th>
-        <th data-priority="5">Commentaires</th>
+        <th>Technicien</th>
+        <th>Statut</th>
+        <th></th>
     </tr>
     </thead>
     <?php
@@ -38,7 +36,7 @@
 
         echo "<tr>";
         echo "<td>".$engineer."</td>";
-        echo "<td>".$bug->getReporter()->getName()."</td>";
+        //echo "<td>".$bug->getReporter()->getName()."</td>";
         //echo "<td>".$bug->getDescription()."</td>";
         //echo "<td>".$bug->getCreated()->format('d.m.Y')."</td>";
         echo "<td>".$bug->getStatus()."</td>";
