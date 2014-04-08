@@ -19,9 +19,9 @@
 </form>
     </div>
     <div data-role="content">
-        <div data-role="collapsible-set" data-theme="b" data-content-theme="a">
+
             <div id="liste_tickets">
-                <div data-role="collapsible" data-collapsed="true">
+
                     <h2>BUGS EN COURS</h2>
 
                     <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
@@ -30,6 +30,7 @@
                             <th>Client</th>
                             <th>Statut</th>
                             <th data-priority="3">Date</th>
+                            <th data-priority="4">Resume</th>
                             <th></th>
                         </tr>
                         </thead>
@@ -52,6 +53,7 @@
                                 echo "<td>Ouvert</td>";
                             }
                             echo "<td>".$bug->getCreated()->format('d.m.Y')."</td>";
+                            echo "<td>".$bug->getResume()."</td>";
                             echo "<td><a href='index.php?uc=dash&action=config&bug=".$bug->getId()."'><img src='util/img/arrow.png'></a></td>";
                             echo "</tr>";
                         }
@@ -59,35 +61,6 @@
                         ?>
                     </table><br>
                 </div>
-
-                <hr>
-                <div data-role="collapsible">
-                    <h2>BUGS FERMES</h2>
-
-                    <table cellspacing="0">
-                        <tr><th>Technicien</th><th>Client</th><th>Description</th><th>Résumé résolution</th><th>Crée le</th><th>Statut</th></tr>
-                        <?php
-                        foreach($bugs_fermes as $bug){
-                            if ($bug->getEngineer() != null){
-                                $engineer = $bug->getEngineer()->getName();
-                            }else{
-                                $engineer = "non affecté";
-                            }
-
-                            echo "<tr>";
-                            echo "<td>".$engineer."</td>";
-                            echo "<td>".$bug->getReporter()->getName()."</td>";
-                            echo "<td>".$bug->getDescription()."</td>";
-                            echo "<td>".$bug->getResume()."</td>";
-                            echo "<td>".$bug->getCreated()->format('d.m.Y')."</td>";
-                            echo "<td>".$bug->getStatus()."</td>";
-                            echo "</tr>";
-                        }
-
-                        ?>
-                    </table>
-                </div>
             </div>
-        </div>
-    </div>
+
 </div>
