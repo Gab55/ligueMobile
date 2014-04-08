@@ -18,11 +18,13 @@
             <div id="liste_tickets">
                 <div data-role="collapsible" data-collapsed="true">
 <h2>BUGS EN COURS</h2>
+
 <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
     <thead>
     <tr>
         <th>Technicien</th>
         <th>Statut</th>
+        <th data-priority="3">Date</th>
         <th></th>
     </tr>
     </thead>
@@ -38,8 +40,13 @@
         echo "<td>".$engineer."</td>";
         //echo "<td>".$bug->getReporter()->getName()."</td>";
         //echo "<td>".$bug->getDescription()."</td>";
-        //echo "<td>".$bug->getCreated()->format('d.m.Y')."</td>";
-        echo "<td>".$bug->getStatus()."</td>";
+        if($bug->getStatus()=="IN PROGRESS"){
+            echo "<td>En cours</td>";
+        }
+        else {
+            echo "<td>Ouvert</td>";
+        }
+        echo "<td>".$bug->getCreated()->format('d.m.Y')."</td>";
         echo "<td><a href='index.php?uc=dash&action=config&bug=".$bug->getId()."'><img src='util/img/arrow.png'></a></td>";
         echo "</tr>";
     }
