@@ -22,7 +22,7 @@ switch($action){
         break;
     }
     case 'config' : {
-        $techniciens = getAllTechnicien();
+        //$techniciens = getAllTechnicien();
         include("vues/v_config_resp.php");
         break;
     }

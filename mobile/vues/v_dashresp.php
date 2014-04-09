@@ -47,13 +47,18 @@
             echo "<td>Ouvert</td>";
         }
         echo "<td>".$bug->getCreated()->format('d.m.Y')."</td>";
-        echo "<td><a href='index.php?uc=dash&action=config&bug=".$bug->getId()."'><img src='util/img/arrow.png'></a></td>";
+        echo "<td><a href='index.php?uc=dash&action=config&bug=".$bug->getId()."' data-transition='slide' >Ouvrir</a></td>";
         echo "</tr>";
     }
 
     ?>
-</table><br>
-                    </div>
+</table>
+                    <a href='index.php?uc=dash&action=config' data-transition='slide'>Ouvrir</a>
+
+
+
+<br>
+</div>
 
 <hr>
                 <div data-role="collapsible">
