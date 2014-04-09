@@ -199,8 +199,5 @@ function ajouterNewBug(){
     $entityManager->persist($bug);
     $entityManager->flush();
 
-
-
-
 }
 ?>

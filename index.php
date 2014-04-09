@@ -1,6 +1,7 @@
 <?php
 session_start();
-
+include("util/fonctions.inc.php");
+include ("util/upload_file.php");
 require_once './mobile/lib/Mobile-Detect/Mobile_Detect.php';
 $detect = new Mobile_Detect;
 
@@ -9,8 +10,7 @@ if ( $detect->isMobile() ) {
     header('Location:./mobile/');
 }
 
-include("util/fonctions.inc.php");
-include ("util/upload_file.php");
+
 
 $msgErreurs = array();
 
