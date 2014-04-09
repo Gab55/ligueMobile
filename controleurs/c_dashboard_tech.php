@@ -18,7 +18,8 @@ else
 
 switch($action){
     case 'list':{
-        $the_bugs = getAllBugs();
+        $tech = $_SESSION['login']['id'];
+        $the_bugs = getBugsTech($tech);
         $bugs_en_cours = $the_bugs[0];
         $bugs_fermes =  $the_bugs[1];
         include ("vues/v_container_tab_tech.php");

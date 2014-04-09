@@ -20,6 +20,21 @@ $(document).ready(function(){
             url: "../util/c_requetes.php",
             dataType: "json",
             data: "action=infos_ticket&data="+identifiant,
+            beforeSend : function(){
+                var $this = $( this ),
+                    theme = $this.jqmData( "theme" ) || $.mobile.loader.prototype.options.theme,
+                    msgText = $this.jqmData( "msgtext" ) || $.mobile.loader.prototype.options.text,
+                    textVisible = $this.jqmData( "textvisible" ) || $.mobile.loader.prototype.options.textVisible,
+                    textonly = !!$this.jqmData( "textonly" );
+                html = $this.jqmData( "html" ) || "";
+                $.mobile.loading( "show", {
+                    text: msgText,
+                    textVisible: textVisible,
+                    theme: theme,
+                    textonly: textonly,
+                    html: html
+                });
+            },
             success: function(data){
                 $("tr[name=une_ligne]").remove();
                 $("#descri_ticket").html(data['description']);

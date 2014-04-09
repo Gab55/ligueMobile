@@ -138,6 +138,22 @@ class User
     }
 
     /**
+     * @param \Bug[] $assignedBugs
+     */
+    public function setAssignedBugs($assignedBugs)
+    {
+        $this->assignedBugs = $assignedBugs;
+    }
+
+    /**
+     * @return \Bug[]
+     */
+    public function getAssignedBugs()
+    {
+        return $this->assignedBugs;
+    }
+
+    /**
      * @return \Bug[]
      */
     public function getReportedBugs()
