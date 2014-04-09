@@ -26,7 +26,8 @@ switch($action){
     }
     case 'config' : {
         $techniciens = getAllTechnicien();
-        include("../vues/v_config_tech.php");
+        //include("../vues/v_config_tech.php");
+        include("/vues/v_modif_bug.php");
         break;
     }
     case 'modifier_statut' : {
@@ -40,5 +41,14 @@ switch($action){
     }
     case 'modifier_statut' : {
 
+    }
+    case 'modif':{
+        include("./vues/v_modif_bug.php");
+        break;
+    }
+
+    case 'test':{
+        include("./vues/v_modif_bug.php");
+        break;
     }
 }

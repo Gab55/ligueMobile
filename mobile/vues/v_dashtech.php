@@ -8,7 +8,9 @@
         if(estConnecter()){
         ?>
             <a href="index.php?uc=dash" data-role="button" data-inline="true"> Mon tableau de bord </a>
+            <a href="index.php?uc=dash&action=modif" data-transition='slide'data-role="button" data-inline="true">modif</a>
             <a href="index.php?uc=deconnexion" data-transition='slide'data-role="button" data-inline="true">Se déconnecter</a>
+
         <?php
         }else{
             ?><a href="index.php?uc=accueil" data-role="button" data-inline="true"> Accueil </a></li>';
