@@ -17,15 +17,17 @@
         <div data-role="collapsible-set" data-theme="b" data-content-theme="a">
             <div id="liste_tickets">
                 <div data-role="collapsible" data-collapsed="true">
+
 <h2>BUGS EN COURS</h2>
+    <h4>Pour afficher le ticket, appuyer sur la ligne correspondante</h4>
 <div id="liste_tickets">
-    <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+    <table data-role="table" id="table-custom-2" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Colonnes à afficher..." data-column-popup-theme="a">
         <thead>
         <tr>
-            <th>Technicien</th>
-            <th>Statut</th>s
+            <th >Technicien</th>
+            <th data-priority="1">Statut</th>
             <th data-priority="3">Date</th>
-            <th></th>
+            <th data-priority="4">Numéro</th>
         </tr>
         </thead>
         <?php
@@ -52,10 +54,6 @@
         ?>
     </table>
 </div>
-                    <a href='index.php?uc=dash&action=config' data-transition='slide'>Ouvrir</a>
-
-
-
 <br>
 </div>
 
@@ -99,4 +97,9 @@
         <hr/>
         <div id="solution_ticket"></div>
     </div>
+    <hr>
+    <form>
+        <input type="text">
+    </form>
+
 </div>
