@@ -90,3 +90,13 @@
         </div>
     </div>
     </div>
+<div data-role="dialog" id="ticket_dialog">
+    <div data-role="header">
+        <h1>Detail du ticket <div id="id_ticket"></div></h1>
+    </div>
+    <div data-role="content">
+        <div id="descri_ticket"></div>
+        <hr/>
+        <div id="solution_ticket"></div>
+    </div>
+</div>
