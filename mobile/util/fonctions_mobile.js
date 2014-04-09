@@ -8,9 +8,11 @@
 $(document).ready(function(){
     $('#liste_tickets tr').bind('click', function(e) {
         // Prevents the default action to be triggered.
+
         e.preventDefault();
         // on va chercher avec un appel Ajax/Json les données sur le ticket choisi
-        var identifiant = $(this).find("td").eq(1).html();
+        var identifiant = $(this).find("td").eq(3).html();
+        alert(identifiant);
 
         $("#id_ticket").html(identifiant);
 
