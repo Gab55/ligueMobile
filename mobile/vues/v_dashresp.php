@@ -18,41 +18,40 @@
             <div id="liste_tickets">
                 <div data-role="collapsible" data-collapsed="true">
 <h2>BUGS EN COURS</h2>
-
-<table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
-    <thead>
-    <tr>
-        <th>Technicien</th>
-        <th>Statut</th>
-        <th data-priority="3">Date</th>
-        <th></th>
-    </tr>
-    </thead>
-    <?php
-    foreach($bugs_en_cours as $bug){
-        if ($bug->getEngineer() != null){
-            $engineer = $bug->getEngineer()->getName();
-        }else{
-            $engineer = "non affecté";
+<div id="liste_tickets">
+    <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+        <thead>
+        <tr>
+            <th>Technicien</th>
+            <th>Statut</th>s
+            <th data-priority="3">Date</th>
+            <th></th>
+        </tr>
+        </thead>
+        <?php
+        foreach($bugs_en_cours as $bug){
+            if ($bug->getEngineer() != null){
+                $engineer = $bug->getEngineer()->getName();
+            }else{
+                $engineer = "non affecté";
+            }
+            echo "<tr>";
+            echo "<td>".$engineer."</td>";
+            //echo "<td>".$bug->getReporter()->getName()."</td>";
+            //echo "<td>".$bug->getDescription()."</td>";
+            if($bug->getStatus()=="IN PROGRESS"){
+                echo "<td>En cours</td>";
+            }
+            else {
+                echo "<td>Ouvert</td>";
+            }
+            echo "<td>".$bug->getCreated()->format('d.m.Y')."</td>";
+            echo "<td>".$bug->getId()."</td>";
+            echo "</tr>";
         }
-
-        echo "<tr>";
-        echo "<td>".$engineer."</td>";
-        //echo "<td>".$bug->getReporter()->getName()."</td>";
-        //echo "<td>".$bug->getDescription()."</td>";
-        if($bug->getStatus()=="IN PROGRESS"){
-            echo "<td>En cours</td>";
-        }
-        else {
-            echo "<td>Ouvert</td>";
-        }
-        echo "<td>".$bug->getCreated()->format('d.m.Y')."</td>";
-        echo "<td><a href='index.php?uc=dash&action=config&bug=".$bug->getId()."' data-transition='slide' >Ouvrir</a></td>";
-        echo "</tr>";
-    }
-
-    ?>
-</table>
+        ?>
+    </table>
+</div>
                     <a href='index.php?uc=dash&action=config' data-transition='slide'>Ouvrir</a>
 
 
@@ -91,3 +90,13 @@
         </div>
     </div>
     </div>
+<div data-role="dialog" id="ticket_dialog">
+    <div data-role="header">
+        <h1>Detail du ticket <div id="id_ticket"></div></h1>
+    </div>
+    <div data-role="content">
+        <div id="descri_ticket"></div>
+        <hr/>
+        <div id="solution_ticket"></div>
+    </div>
+</div>

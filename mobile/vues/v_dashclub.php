@@ -4,10 +4,9 @@
     <div data-role="header">
 <form>
 
-        <a href="index.php?uc=dash&action=nouveau" data-role="button" data-inline="true">Mon tableau de bord </a>
+    <a href="index.php?uc=dash&action=nouveau" data-role="button" data-inline="true">Mon tableau de bord </a>
 
-
-            <a href="index.php?uc=dash&action=nouveau" data-role="button" data-inline="true"> Nouvel incident</a>
+    <a href="index.php?uc=dash&action=nouveau" data-role="button" data-inline="true"> Nouvel incident</a>
 
     <a href="index.php?uc=dash&action=nouveau" data-role="button" data-inline="true"> Se déconnecter </a>
 
