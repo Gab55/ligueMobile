@@ -41,4 +41,8 @@ switch($action){
     case 'modifier_statut' : {
 
     }
+    case 'test':{
+
+        break;
+    }
 }
