@@ -31,7 +31,7 @@ switch($action){
         include("/vues/v_modif_bug.php");
         break;
     }
-    case 'modifier_statut' : {
+    case 'modif_statut' : {
         $idBug = $_POST['idBug'];
         $idEngineer = $_SESSION['login']['id'];
         $status = $_POST['statut'];
@@ -40,9 +40,7 @@ switch($action){
         header("Location:index.php?uc=dash");
         break;
     }
-    case 'modifier_statut' : {
 
-    }
     case 'modif':{
         include("./vues/v_modif_bug.php");
         break;
