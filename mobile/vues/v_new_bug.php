@@ -1,5 +1,5 @@
 
-<form name="new_bug" method="POST" enctype="multipart/form-data" action="index.php?uc=dash&action=nouveau">
+<form name="new_bug" method="POST" data-ajax="false" enctype="multipart/form-data" action="index.php?uc=dash&action=nouveau">
     <fieldset>
     <legend>Signalement d'un nouveau bug</legend>
     <p>
