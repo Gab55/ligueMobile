@@ -20,8 +20,8 @@
                     </form>
                 </div>
 
-                <a href="index.php?uc=dash" data-role="button">Mon Tableau de Bord</a>
-                <input type="submit" value="Valider" name="valider">
+                <a href="index.php?uc=dash" data-transition="slide" data-role="button">Mon Tableau de Bord</a>
+                <input type="submit" data-transition="slide" value="Valider" name="valider">
                 <input type="reset" value="Annuler" name="annuler">
 
         </div>

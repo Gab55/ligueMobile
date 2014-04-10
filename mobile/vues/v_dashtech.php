@@ -7,7 +7,7 @@
     <?php
         if(estConnecter()){
         ?>
-            <a href="index.php?uc=dash" data-role="button" data-inline="true"> Mon tableau de bord </a>
+            <a href="index.php?uc=dash" data-role="button" data-transition="slide" data-inline="true"> Mon tableau de bord </a>
             <a href="index.php?uc=dash&action=modif" data-transition='slide'data-role="button" data-inline="true">modif</a>
             <a href="index.php?uc=deconnexion" data-transition='slide'data-role="button" data-inline="true">Se déconnecter</a>
 
@@ -26,11 +26,11 @@
 
                     <h2>BUGS EN COURS</h2>
 
-                    <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+                    <table data-role="table" id="table-custom-2" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="a" data-column-btn-text="Colonnes à afficher..." data-column-popup-theme="a">
                         <thead>
                         <tr>
                             <th>Technicien</th>
-                            <th>Statut</th>s
+                            <th>Statut</th>
                             <th data-priority="3">Priorité</th>
                             <th data-priority="4">Date</th>
                             <th data-priority="5">Résume</th>
