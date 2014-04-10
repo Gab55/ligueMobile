@@ -7,7 +7,7 @@ function envoieFichier($file)
     $nombre = mt_rand($nb_min,$nb_max);
     //$fichier = $nombre;
 
-    $taille_maxi = 1000000;
+    $taille_maxi = 9000000;
     $taille = filesize($file['tmp_name']);
     $extensions = array('.png', '.gif', '.jpg', '.jpeg' );
     $extension = strrchr($file['name'], '.');
