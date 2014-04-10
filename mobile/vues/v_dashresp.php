@@ -60,9 +60,17 @@
 <hr>
                 <div data-role="collapsible">
 <h2>BUGS FERMES</h2>
-
-<table cellspacing="0">
-    <tr><th>Technicien</th><th>Client</th><th>Description</th><th>Résumé résolution</th><th>Crée le</th><th>Statut</th></tr>
+<h4>Pour afficher le ticket, appuyer sur la ligne correspondante</h4>
+<div id="liste_tickets">
+    <table data-role="table" id="table-custom-2" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Colonnes à afficher..." data-column-popup-theme="a">
+    <thead>
+        <tr>
+            <th >Technicien</th>
+            <th data-priority="1">Résumé</th>
+            <th data-priority="3">Date</th>
+            <th data-priority="4">Numéro</th>
+        </tr>
+    </thead>
     <?php
     foreach($bugs_fermes as $bug){
         if ($bug->getEngineer() != null){
@@ -73,8 +81,8 @@
 
         echo "<tr>";
         echo "<td>".$engineer."</td>";
-        echo "<td>".$bug->getReporter()->getName()."</td>";
-        echo "<td>".$bug->getDescription()."</td>";
+        //echo "<td>".$bug->getReporter()->getName()."</td>";
+        //echo "<td>".$bug->getDescription()."</td>";
         echo "<td>".$bug->getResume()."</td>";
         echo "<td>".$bug->getCreated()->format('d.m.Y')."</td>";
         echo "<td>".$bug->getStatus()."</td>";
@@ -83,9 +91,10 @@
 
     ?>
 </table>
-                </div>
-            </div>
-        </div>
+    </div>
+    </div>
+    </div>
+    </div>
     </div>
     </div>
 <div data-role="dialog" id="ticket_dialog">
@@ -93,7 +102,8 @@
         <h1>Detail du ticket <div id="id_ticket"></div></h1>
     </div>
     <div data-role="content">
-        <div id="descri_ticket"></div>
+        <h3>Date :</h3><div id="date_ticket"></div>
+        <h3>Description :</h3><div id="descri_ticket"></div>
         <hr/>
         <div id="solution_ticket"></div>
     </div>

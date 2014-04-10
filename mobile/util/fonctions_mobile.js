@@ -37,6 +37,7 @@ $(document).ready(function(){
             },
             success: function(data){
                 $("tr[name=une_ligne]").remove();
+                $("#date_ticket").html(data['created']);
                 $("#descri_ticket").html(data['description']);
                 $("#solution_ticket").html(data['resume']);
 
