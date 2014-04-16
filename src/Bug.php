@@ -207,7 +207,8 @@ class Bug
             'id' => $this->id,
             'description'=> $this->description,
             'resume'=> $this->resume,
-            'created'=>$this->created->format('d.m.Y')
+            'created'=>$this->created->format('d.m.Y'),
+            'capture'=>$this->capture
         );
     }
 

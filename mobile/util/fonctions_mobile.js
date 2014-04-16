@@ -39,7 +39,7 @@ $(document).ready(function(){
                 $("tr[name=une_ligne]").remove();
                 $("#date_ticket").html(data['created']);
                 $("#descri_ticket").html(data['description']);
-                $("#solution_ticket").html(data['resume']);
+                $("#capture").html("<img src='../upload/"+data['capture']+"' style='width:250px'>");
 
                 // on active le clic sur le lien invisible pour déclencher le dialog
                 $('#lnkDialog').click();
