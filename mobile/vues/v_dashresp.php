@@ -104,8 +104,70 @@
         <h3>Capture d'écran : </h3><div id="capture"></div>
     </div>
     <hr>
-    <form>
-        <input type="radio">Affecter
+    <fieldset data-role="controlgroup">
+        <legend>Que voulez vous faire ?</legend>
+        <input name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked" type="radio" onclick="form_resolu(); ">
+        <label for="radio-choice-1">Changer le statut</label>
+        <input name="radio-choice-1" id="radio-choice-2" value="choice-2" type="radio" onclick="form_affecter();">
+        <label for="radio-choice-2">Affecter à un technicien</label>
+    </fieldset>
+
+    <form id="form_resolu" method="post" action="index.php?uc=dash&action=modifier_statut">
+        <h3>Changement de statut</h3>
+        <input type="hidden" name="idBug" value="<?php echo $bug->getId();?>">
+        <select id="statut" name="statut">
+            <option value="CLOSE">CLOSE</option>
+            <option value="IN PROGRESS">IN PROGRESS</option>
+        </select><br><br>
+        Ajouter une note<br>
+        <textarea name="resume" required=""></textarea><br><br>
+        <input type="submit" value="Valider">
+    </form>
+    <form id="form_affecter" method="post" action="index.php?uc=dash&action=affecter">
+        <input type="hidden" name="idBug" value="<?php echo $bug->getId();?>">
+
+        <label for="select-choice-a" class="select">Technicien :</label>
+        <select name="select-choice-a" id="select-choice-a" data-native-menu="false">
+            <option>Liste des techniciens : </option>
+            <?php
+            foreach($techniciens as $tech) {
+                echo "<option value=".$tech->getId().">".$tech->getName()." ".$tech->getPrenom()."</option>";
+            }
+            ?>
+        </select>
+        <br><br>
+        Priorité :
+        <label for="select-choice-a" class="select">Custom select menu:</label>
+        <select name="select-choice-a" id="select-choice-a" data-native-menu="false">
+            <option>Priorité :</option>
+            <option>Haute</option>
+            <option>Moyenne</option>
+            <option>Basse</option>
+        </select>
+        <br>
+        <br>
+        <input type="submit" value="Affecter">
     </form>
 
+
 </div>
+
+<script>
+    $( document ).ready(function() {
+        $('#form_resolu').fadeOut(1);
+        $('#form_affecter').fadeOut(1);
+    });
+    function form_resolu() {
+
+        $('#form_resolu').fadeOut(1);
+        $('#form_affecter').fadeOut(1);
+        $('#form_resolu').fadeIn(1);
+        $(window).scrollTop($("#form_resolu").offset().top);
+    }
+    function form_affecter() {
+        $('#form_resolu').fadeOut(1);
+        $('#form_affecter').fadeOut(1);
+        $('#form_affecter').fadeIn(1);
+        $(window).scrollTop($("#form_affecter").offset().top);
+    }
+</script>

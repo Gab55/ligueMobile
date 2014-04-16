@@ -18,6 +18,7 @@ switch($action){
         $the_bugs = getAllBugs();
         $bugs_en_cours = $the_bugs[0];
         $bugs_fermes =  $the_bugs[1];
+        $techniciens = getAllTechnicien();
         include ("vues/v_dashresp.php");
         break;
     }
