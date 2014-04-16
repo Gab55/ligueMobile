@@ -15,7 +15,7 @@ function envoieFichier($file)
     //Début des vérifications de sécurité...
     if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
     {
-        $erreur = '<br>Vous devez uploader un fichier de type png, gif, jpg, jpeg, txt ou doc...';
+        $erreur = '<br>Vous devez uploader un fichier de type png, gif, jpg, jpeg...';
     }
     if($taille>$taille_maxi)
     {
