@@ -24,7 +24,7 @@ function envoieFichier($file)
     if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
     {
 
-        if(move_uploaded_file($file['tmp_name'], "upload/". $fichier))
+        if(move_uploaded_file($file['tmp_name'], "../upload/". $fichier))
             //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
         {
             echo "</br>Le fichier a bien été envoyé";
