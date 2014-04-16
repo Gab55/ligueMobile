@@ -70,7 +70,22 @@
     </div>
     <hr>
     <form>
-        <input type="radio">Affecter
+        <div class="ui-field-contain">
+            <h3>Changement de statut</h3>
+            <select name="status" id="status" data-native-menu="false">
+                <option value="choose-one" data-placeholder="true">Statut</option>
+                <option value="2">IN PROGRESSE</option>
+                <option value="3">CLOSE</option>
+            </select>
+        </div>
+        <div data-role="fieldcontain" class="ui-hide-label">
+            <form>
+                <input data-clear-btn="true" name="resume" id="resume" type="text" placeholder="Note technicien">
+            </form>
+        </div>
+
+        <input type="submit" data-transition="slide" id="note_tech" value="Valider" name="valider">
+        <input type="reset" value="Annuler" name="annuler">
     </form>
 
 </div>
