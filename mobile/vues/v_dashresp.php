@@ -105,7 +105,7 @@
     </div>
     <hr>
     <form>
-        <input type="text">
+        <input type="radio">Affecter
     </form>
 
 </div>
