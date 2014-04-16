@@ -7,10 +7,6 @@
  * To change this template use File | Settings | File Templates.
  */
 
-include("../vues/v_entete.php") ;
-include("../vues/v_bandeau_tech.php") ;
-echo("Bienvenue ".$_SESSION['login']['identite']);?></br><?php
-
 if(!isset($_REQUEST['action']))
     $action = 'list';
 else
