@@ -66,11 +66,13 @@
     <div data-role="content">
         <h3>Date :</h3><div id="date_ticket"></div>
         <h3>Description :</h3><div id="descri_ticket"></div>
+        <h3>Priorité :</h3><div id="priorite_ticket"></div>
         <h3>Capture d'écran : </h3><div id="capture"></div>
     </div>
     <hr>
-    <form>
-        <div class="ui-field-contain">
+    <form <form id="form_resolu" method="post" action="./mobile.index.php?uc=dash&action=modifier_statut">
+
+    <div class="ui-field-contain">
             <h3>Changement de statut</h3>
             <select name="status" id="status" data-native-menu="false">
                 <option value="choose-one" data-placeholder="true">Statut</option>
@@ -85,7 +87,7 @@
         </div>
 
         <input type="submit" data-transition="slide" id="note_tech" value="Valider" name="valider">
-        <input type="reset" value="Annuler" name="annuler">
+        <input type="reset" value="Annuler" name="annuler" >
     </form>
 
 </div>
