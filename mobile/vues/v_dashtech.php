@@ -34,7 +34,7 @@
                             <th data-priority="3">Priorité</th>
                             <th data-priority="4">Date</th>
                             <th data-priority="5">Description</th>
-                            <th></th>
+                            <th>Modifier</th>
                         </tr>
                         </thead>
                         <?php
@@ -57,7 +57,7 @@
                             echo "<td>".$bug->getDelai()."</td>";
                             echo "<td>".$bug->getCreated()->format('d.m.Y')."</td>";
                             echo "<td>".$bug->getDescription()."</td>";
-                            echo "</tr>";
+                            echo "<td><a href='index.php?uc=dash&action=modif=".$bug->getId()."'><img src='../util/img/arrow.png'></a></td>";
                         }
                         ?>
                     </table><br>
