@@ -23,8 +23,8 @@
                                 <th >Client</th>
                                 <th data-priority="1">Statut</th>
                                 <th data-priority="2">Date</th>
-                                <th data-priority="3">Priorité</th>
-                                <th data-priority="5">Numéro</th>
+                                <th data-priority="3">Numéro</th>
+                                <th data-priority="4">Priorité</th>
                             </tr>
                             </thead>
                             <?php
@@ -45,8 +45,10 @@
                                     echo "<td>Ouvert</td>";
                                 }
                                 echo "<td>".$bug->getCreated()->format('d.m.Y')."</td>";
-                                echo "<td>".$bug->getDelai()."</td>";
+
                                 echo "<td>".$bug->getId()."</td>";
+                                echo "<td>".$bug->getDelai()."</td>";
+
                                 echo "</tr>";
                             }
                             ?>
