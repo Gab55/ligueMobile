@@ -104,8 +104,7 @@
     <div data-role="content">
         <h3>Date :</h3><div id="date_ticket"></div>
         <h3>Description :</h3><div id="descri_ticket"></div>
-        <hr/>
-        <div id="solution_ticket"></div>
+        <h3>Capture d'écran : </h3><div id="capture"></div>
     </div>
     <hr>
     <form>
