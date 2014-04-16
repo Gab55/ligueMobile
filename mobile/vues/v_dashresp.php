@@ -4,7 +4,7 @@
     <div data-role="header">
         <form>
 
-                <a href="index.php?uc=accueil" data-transition='slide'data-role="button" data-inline="true">Tableau de bord</a>
+                <a href="index.php?uc=dash" data-transition='slide'data-role="button" data-inline="true">Tableau de bord</a>
 
 
                 <a href="index.php?uc=deconnexion" data-transition='slide'data-role="button" data-inline="true">Se déconnecter</a>
