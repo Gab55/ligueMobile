@@ -33,7 +33,7 @@
                             <th>Statut</th>
                             <th data-priority="3">Priorité</th>
                             <th data-priority="4">Date</th>
-                            <th data-priority="5">Résume</th>
+                            <th data-priority="5">Description</th>
                             <th></th>
                         </tr>
                         </thead>
@@ -56,7 +56,7 @@
                             }
                             echo "<td>".$bug->getDelai()."</td>";
                             echo "<td>".$bug->getCreated()->format('d.m.Y')."</td>";
-                            echo "<td>".$bug->getResume()."</td>";
+                            echo "<td>".$bug->getDescription()."</td>";
                             echo "</tr>";
                         }
                         ?>
