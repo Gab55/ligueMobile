@@ -3,14 +3,11 @@
 <div data-role="page">
     <div data-role="header">
         <form>
-            <div class="ui-input-btn ui-btn ui-btn-inline">
-                Mon tableau de bord
-                <input data-enhanced="true" value="Enhanced" type="button">
-            </div>
-            <div class="ui-input-btn ui-btn ui-btn-inline">
-                Se déconnecter
-                <input data-enhanced="true" value="Enhanced" type="button">
-            </div>
+
+                <a href="index.php?uc=accueil" data-transition='slide'data-role="button" data-inline="true">Tableau de bord</a>
+
+
+                <a href="index.php?uc=deconnexion" data-transition='slide'data-role="button" data-inline="true">Se déconnecter</a>
         </form>
     </div>
     <div data-role="content">
