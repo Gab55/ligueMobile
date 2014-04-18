@@ -70,24 +70,16 @@
         <h3>Capture d'écran : </h3><div id="capture"></div>
     </div>
     <hr>
-    <form <form id="form_resolu" method="post" action="./mobile.index.php?uc=dash&action=modifier_statut">
-
-    <div class="ui-field-contain">
-            <h3>Changement de statut</h3>
-            <select name="status" id="status" data-native-menu="false">
-                <option value="choose-one" data-placeholder="true">Statut</option>
-                <option value="2">IN PROGRESSE</option>
-                <option value="3">CLOSE</option>
-            </select>
-        </div>
-        <div data-role="fieldcontain" class="ui-hide-label">
-            <form>
-                <input data-clear-btn="true" name="resume" id="resume" type="text" placeholder="Note technicien">
-            </form>
-        </div>
-
-        <input type="submit" data-transition="slide" id="note_tech" value="Valider" name="valider">
-        <input type="reset" value="Annuler" name="annuler" >
+    <form id="form_resolu" method="post" action="index.php?uc=dash&action=modifier_statut">
+        <h2>Changement de statut</h2>
+        <input type="hidden" name="idBug" value="<?php echo $bug->getId();?>">
+        <select id="statut" name="statut">
+            <option value="CLOSE">CLOSE</option>
+            <option value="IN PROGRESS">IN PROGRESS</option>
+        </select><br><br>
+        Ajouter une note<br>
+        <textarea name="resume" required=""></textarea><br><br>
+        <input type="submit" value="Valider">
     </form>
 
 </div>

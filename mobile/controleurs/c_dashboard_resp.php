@@ -28,7 +28,7 @@ switch($action){
         break;
     }
     case 'modifier_statut' : {
-        $idBug = $_POST['idBug'];
+        $idBug = $_POST['idBug_statut'];
         $idEngineer = $_SESSION['login']['id'];
         $status = $_POST['statut'];
         $resume = $_POST['resume'];
@@ -37,11 +37,11 @@ switch($action){
         break;
     }
     case 'affecter' : {
-        $idBug = $_POST['idBug'];
+        $idBug = $_POST['idBug_affecter'];
         $idTech = $_POST['idTech'];
         $delai = $_POST['delai'];
         affecterBug($idBug, $idTech, $delai);
-        //header("Location:index.php?uc=dash");
+        header("Location:index.php?uc=dash");
         break;
     }
 }

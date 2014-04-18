@@ -166,6 +166,8 @@ function getOneBug($id) {
 function affecterBug($idBug, $idTech, $delai) {
     require "bootstrap.php";
     $bug = $entityManager->find('Bug', $idBug);
+    echo var_dump($idBug);
+    echo var_dump($bug);
     $tech = $entityManager->find('User', $idTech);
     $bug->setEngineer($tech);
     $bug->setDelai($delai);

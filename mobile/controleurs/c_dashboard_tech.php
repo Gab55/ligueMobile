@@ -27,7 +27,7 @@ switch($action){
         include("/vues/v_modif_bug.php");
         break;
     }
-    case 'modif_statut' : {
+    case 'modifier_statut' : {
         $idBug = $_POST['idBug'];
         $idEngineer = $_SESSION['login']['id'];
         $status = $_POST['statut'];

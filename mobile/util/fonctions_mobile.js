@@ -37,6 +37,8 @@ $(document).ready(function(){
             },
             success: function(data){
                 $("tr[name=une_ligne]").remove();
+                $('#idBug_statut').val(data['id']);
+                $('#idBug_affecter').val(data['id']);
                 $("#date_ticket").html(data['created']);
                 $("#descri_ticket").html(data['description']);
                 $("#capture").html("<img src='../upload/"+data['capture']+"' style='width:250px'>");

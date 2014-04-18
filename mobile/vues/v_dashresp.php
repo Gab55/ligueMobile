@@ -50,6 +50,7 @@
         }
         ?>
     </table>
+    </div>
 </div>
 <br>
 </div>
@@ -57,15 +58,14 @@
 <hr>
                 <div data-role="collapsible">
 <h2>BUGS FERMES</h2>
-<h4>Pour afficher le ticket, appuyer sur la ligne correspondante</h4>
-<div id="liste_tickets">
+<div id="liste_tickets_fermes">
     <table data-role="table" id="table-custom-2" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Colonnes à afficher..." data-column-popup-theme="a">
     <thead>
         <tr>
             <th >Technicien</th>
             <th data-priority="1">Résumé</th>
             <th data-priority="3">Date</th>
-            <th data-priority="4">Numéro</th>
+            <th data-priority="4">Statut</th>
         </tr>
     </thead>
     <?php
@@ -114,7 +114,7 @@
 
     <form id="form_resolu" method="post" action="index.php?uc=dash&action=modifier_statut">
         <h2>Changement de statut</h2>
-        <input type="hidden" name="idBug" value="<?php echo $bug->getId();?>">
+        <input type="hidden" name="idBug_statut" id="idBug_statut" value="">
         <select id="statut" name="statut">
             <option value="CLOSE">CLOSE</option>
             <option value="IN PROGRESS">IN PROGRESS</option>
@@ -125,7 +125,7 @@
     </form>
     <form id="form_affecter" method="post" action="index.php?uc=dash&action=affecter">
         <h2>Affectation</h2>
-        <input type="hidden" name="idBug" value="<?php echo $bug->getId();?>">
+        <input type="hidden" name="idBug_affecter" id="idBug_affecter" value="">
 
         <label for="select-choice-a" class="select">Technicien :</label>
         <select name="idTech" id="select-choice-a" data-native-menu="false">
@@ -139,11 +139,11 @@
         <br><br>
         <fieldset data-role="controlgroup">
             <legend>Priorité :</legend>
-            <input name="delai" id="radio-choice-1" value="choice-1" checked="checked" type="radio">
+            <input name="delai" id="radio-choice-1" value="Haute" checked="checked" type="radio">
             <label for="radio-choice-1">Haute</label>
-            <input name="delai" id="radio-choice-2" value="choice-2" type="radio">
+            <input name="delai" id="radio-choice-2" value="Moyenne" type="radio">
             <label for="radio-choice-2">Moyenne</label>
-            <input name="delai" id="radio-choice-3" value="choice-3" type="radio">
+            <input name="delai" id="radio-choice-3" value="Basse" type="radio">
             <label for="radio-choice-3">Basse</label>
         </fieldset>
         <br>
