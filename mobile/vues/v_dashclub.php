@@ -64,7 +64,17 @@
             <div data-role="collapsible">
                 <h3>Tickets cloturés</h3>
                 <p>
-                <table><tr><th></th><th>Numéro</th><th>Date</th><th>Technicien</th><th>Produits concernés</th></tr>
+                <table data-role="table" id="table-custom-2" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Colonnes à afficher..." data-column-popup-theme="a">
+                   <thead>
+                    <tr>
+                        <th></th>
+                        <th>Numéro</th>
+                        <th data-priority="2">Date</th>
+                        <th data-priority="3">Objet</th>
+                        <th data-priority="4">Technicien</th>
+                        <th data-priority="5">Produits concernés</th>
+                    </tr>
+                   </thead>
                     <?php
                     foreach ($bugs_fermes as $bug) {
                         if ($bug->getEngineer() != null){
@@ -76,6 +86,7 @@
                         echo "<td><img src='../images/ferme.png' width='30px' height='30px'/></td>";
                         echo "<td class='colonneid'>".$bug->getId()."</td>";
                         echo "<td class='colonnedate'>".$bug->getCreated()->format('d.m.Y')."</td>";
+                        echo "<td class='colonnetech'>".$bug->getObjet()."</td>";
                         echo "<td class='colonnetech'>".$engineer."</td>";
                         echo "<td class='colonneprod'>";
                         foreach ($bug->getProducts() as $product) {
