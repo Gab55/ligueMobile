@@ -41,7 +41,7 @@ switch($action){
         $idTech = $_POST['idTech'];
         $delai = $_POST['delai'];
         affecterBug($idBug, $idTech, $delai);
-        header("Location:index.php?uc=dash");
+        //header("Location:index.php?uc=dash");
         break;
     }
 }
