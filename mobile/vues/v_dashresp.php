@@ -113,7 +113,7 @@
     </fieldset>
 
     <form id="form_resolu" method="post" action="index.php?uc=dash&action=modifier_statut">
-        <h3>Changement de statut</h3>
+        <h2>Changement de statut</h2>
         <input type="hidden" name="idBug" value="<?php echo $bug->getId();?>">
         <select id="statut" name="statut">
             <option value="CLOSE">CLOSE</option>
@@ -124,10 +124,11 @@
         <input type="submit" value="Valider">
     </form>
     <form id="form_affecter" method="post" action="index.php?uc=dash&action=affecter">
+        <h2>Affectation</h2>
         <input type="hidden" name="idBug" value="<?php echo $bug->getId();?>">
 
         <label for="select-choice-a" class="select">Technicien :</label>
-        <select name="select-choice-a" id="select-choice-a" data-native-menu="false">
+        <select name="idTech" id="select-choice-a" data-native-menu="false">
             <option>Liste des techniciens : </option>
             <?php
             foreach($techniciens as $tech) {
@@ -136,14 +137,15 @@
             ?>
         </select>
         <br><br>
-        Priorité :
-        <label for="select-choice-a" class="select">Custom select menu:</label>
-        <select name="select-choice-a" id="select-choice-a" data-native-menu="false">
-            <option>Priorité :</option>
-            <option>Haute</option>
-            <option>Moyenne</option>
-            <option>Basse</option>
-        </select>
+        <fieldset data-role="controlgroup">
+            <legend>Priorité :</legend>
+            <input name="delai" id="radio-choice-1" value="choice-1" checked="checked" type="radio">
+            <label for="radio-choice-1">Haute</label>
+            <input name="delai" id="radio-choice-2" value="choice-2" type="radio">
+            <label for="radio-choice-2">Moyenne</label>
+            <input name="delai" id="radio-choice-3" value="choice-3" type="radio">
+            <label for="radio-choice-3">Basse</label>
+        </fieldset>
         <br>
         <br>
         <input type="submit" value="Affecter">
