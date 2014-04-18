@@ -33,7 +33,7 @@ switch($action){
         $status = $_POST['statut'];
         $resume = $_POST['resume'];
         statutBug($idBug, $idEngineer, $status, $resume);
-        header("Location:index.php?uc=dash");
+        //header("Location:index.php?uc=dash");
         break;
     }
 
@@ -42,8 +42,4 @@ switch($action){
         break;
     }
 
-    case 'test':{
-        include("./vues/v_modif_bug.php");
-        break;
-    }
 }

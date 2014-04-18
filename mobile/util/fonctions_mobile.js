@@ -40,6 +40,7 @@ $(document).ready(function(){
                 $('#idBug_statut').val(data['id']);
                 $('#idBug_affecter').val(data['id']);
                 $("#date_ticket").html(data['created']);
+                $("#priorite_ticket").html(data['delai']);
                 $("#descri_ticket").html(data['description']);
                 $("#capture").html("<img src='../upload/"+data['capture']+"' style='width:250px'>");
 
