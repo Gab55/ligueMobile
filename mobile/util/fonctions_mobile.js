@@ -38,6 +38,7 @@ $(document).ready(function(){
             success: function(data){
                 $("tr[name=une_ligne]").remove();
                 $("#date_ticket").html(data['created']);
+                $("#priorite_ticket").html(data['delai']);
                 $("#descri_ticket").html(data['description']);
                 $("#capture").html("<img src='../upload/"+data['capture']+"' style='width:250px'>");
 

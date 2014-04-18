@@ -70,7 +70,7 @@
         <h3>Capture d'écran : </h3><div id="capture"></div>
     </div>
     <hr>
-    <form <form id="form_resolu" method="post" action="./mobile.index.php?uc=dash&action=modifier_statut">
+    <form <form id="form_modifier" method="post" action="index.php?uc=dash&action=modifier_statut">
 
     <div class="ui-field-contain">
             <h3>Changement de statut</h3>
@@ -86,8 +86,7 @@
             </form>
         </div>
 
-        <input type="submit" data-transition="slide" id="note_tech" value="Valider" name="valider">
-        <input type="reset" value="Annuler" name="annuler" >
+        <input type="submit" value="Modifier" name="valider">
     </form>
 
 </div>
